@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test":"npx playwright test --headed --debug ",
-    "prod":"npx playwright test --headless ---e2e"
+    "test":"npx playwright test --headed",
+    "test:debug":"npx playwright test --headed --debug",
+    "prod":"npx playwright test --headless"
   },
   "repository": {
     "type": "git",

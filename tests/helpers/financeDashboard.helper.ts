@@ -1,8 +1,19 @@
-import { test, expect } from "@playwright/test"
+import{ expect, type Page} from '@playwright/test'
 
-test('test the finance dashbaord for content visbility and functional features', async ({ page }) => {
+async function openFinanceDashboardAndVerifyLoaded (
+    page:Page,
+    url:string,
+    title:RegExp,
+    accordianfinanceOverview:string,
+    financeOverviewTitle:string,
+    financeOverviewcontainstext:string,
+    accordionFinanceOverviewState:string,
+    accordionHealthOverview:string,
+    healthOverviewTitle:string,
+    accordionHealthOverviewState:string,
 
-    // verify the URL loads
+) {
+ // verify the URL loads
     await page.goto("https://varisht-fe.netlify.app/dashboard/finance")
     // verify the page has a title
     await expect(page).toHaveTitle(/Dashboard/)
@@ -19,5 +30,4 @@ test('test the finance dashbaord for content visbility and functional features',
     await expect(page.locator('[data-testid=dashboard-health-accordion-summary"]')).toHaveText("Health Overview")
     // verify the page Finance has a section Healthoverview expanded
     await expect(page.locator('[data-testid="dashboard-health-accordion-summary"]')).toHaveAttribute('aria-expanded', 'true')
-
-})
+}
