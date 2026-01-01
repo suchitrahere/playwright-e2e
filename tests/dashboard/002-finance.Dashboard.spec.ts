@@ -19,3 +19,7 @@ test('test the finance dashbaord loads and shows key sections', async ({ page })
     await finance.expectHealthOverviewAccordianText();
     await finance.expectHealthOverviewAccordianExpanded();
 })
+
+//TODO: Test the mouse over the different sections shows the data on mouse over
+
+test ('mouse over the different s3ctions shows the data on mouse over', async ({ page }) => {})
